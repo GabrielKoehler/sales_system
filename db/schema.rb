@@ -28,13 +28,12 @@ ActiveRecord::Schema.define(version: 2022_03_12_182211) do
     t.integer "number"
     t.string "complement"
     t.string "postal_code"
-    t.string "type"
     t.string "city"
     t.string "uf"
-    t.integer "user_id", null: false
+    t.integer "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_delivery_addresses_on_user_id"
+    t.index ["customer_id"], name: "index_delivery_addresses_on_customer_id"
   end
 
   create_table "home_addresses", force: :cascade do |t|
@@ -43,13 +42,12 @@ ActiveRecord::Schema.define(version: 2022_03_12_182211) do
     t.integer "number"
     t.string "complement"
     t.string "postal_code"
-    t.string "type"
     t.string "city"
     t.string "uf"
-    t.integer "user_id", null: false
+    t.integer "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_home_addresses_on_user_id"
+    t.index ["customer_id"], name: "index_home_addresses_on_customer_id"
   end
 
 end
