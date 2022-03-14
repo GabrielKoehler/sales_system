@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_03_12_182211) do
   create_table "delivery_addresses", force: :cascade do |t|
     t.string "street"
     t.string "neighborhood"
-    t.integer "number"
+    t.string "number"
     t.string "complement"
     t.string "postal_code"
     t.string "city"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_03_12_182211) do
   create_table "home_addresses", force: :cascade do |t|
     t.string "street"
     t.string "neighborhood"
-    t.integer "number"
+    t.string "number"
     t.string "complement"
     t.string "postal_code"
     t.string "city"

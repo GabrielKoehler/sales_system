@@ -1,0 +1,30 @@
+pt-BR:
+  activerecord:
+    models:
+      delivery_address:
+        one: Endereço de entrega
+        other: Endereços de entrega
+    attributes:
+      customer:
+        name: Nome
+        cpf: CPF
+        age: Idade
+        email: Email
+        password: Senha
+      delivery_address:
+        street: Rua
+        neighborhood: Bairro
+        number: Número
+        complement: Complemento
+        postal_code: Código Postal
+        city: Cidade
+        uf: UF
+      home_address:
+        street: Rua
+        neighborhood: Bairro
+        number: Número
+        complement: Complemento
+        postal_code: Código Postal
+        city: Cidade
+        uf: UF
+

@@ -3,7 +3,7 @@ class CreateDeliveryAddresses < ActiveRecord::Migration[5.2]
     create_table :delivery_addresses do |t|
       t.string :street
       t.string :neighborhood
-      t.integer :number
+      t.string :number
       t.string :complement
       t.string :postal_code
       t.string :city

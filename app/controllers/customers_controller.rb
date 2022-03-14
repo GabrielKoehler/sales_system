@@ -67,4 +67,18 @@ class CustomersController < ApplicationController
     def customer_params
       params.fetch(:customer, {})
     end
+
+    def customer_params
+      params.require(:customer).permit(
+        :name, :age, :cpf, :email, :password,
+        delivery_address_attributes: [
+          :id, :street, :neighborhood, :number,
+          :complement, :postal_code, :city, :uf
+        ],
+        home_address_attributes: [
+          :id, :street, :neighborhood, :number,
+          :complement, :postal_code, :city, :uf
+        ],
+      )
+    end
 end

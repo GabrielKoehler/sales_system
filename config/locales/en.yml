@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      delivery_address:
+        one: Endereço de entrega
+        other: Endereços de entrega

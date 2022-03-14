@@ -2,7 +2,6 @@
   <% if delivery_address.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(delivery_address.errors.count, "error") %> prohibited this delivery_address from being saved:</h2>
-
       <ul>
       <% delivery_address.errors.full_messages.each do |message| %>
         <li><%= message %></li>

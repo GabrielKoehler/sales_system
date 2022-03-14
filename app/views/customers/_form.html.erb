@@ -1,4 +1,6 @@
-<%= form_with(model: customer, local: true) do |form| %>
+<%# <%= form_with(model: customer, local: true) do |form| %>
+<%= form_for(setup_customer(customer),  local: true) do |form| %>
+
   <% if customer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
@@ -11,7 +13,72 @@
     </div>
   <% end %>
 
+  <div style="border: 1px solid; width: max-content; padding: 10px">
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf%>
+
+    <%= form.label :age %>
+    <%= form.text_field :age%>
+
+    <%= form.label :email %>
+    <%= form.text_field :email%>
+
+    <%= form.label :password %>
+    <%= form.password_field :password%>
+  </div>
+
+  <h3>Endereços:</h3>
+  <div style="margin: 10px 10px; border: 1px solid; width: max-content; padding: 10px">
+    <h3> Endereço de entrega  </h3>
+    <%= form.fields_for :delivery_address do |delivery_address| %>
+      <%= delivery_address.label :street %>
+      <%= delivery_address.text_field :street %>
+      <%= delivery_address.label :neighborhood %>
+      <%= delivery_address.text_field :neighborhood %>
+      <%= delivery_address.label :number %>
+      <%= delivery_address.text_field :number%>
+      <%= delivery_address.label :complement %>
+      <%= delivery_address.text_field :complement %>
+      <%= delivery_address.label :postal_code %>
+      <%= delivery_address.text_field :postal_code %>
+      <%= delivery_address.label :city %>
+      <%= delivery_address.text_field :city %>
+      <%= delivery_address.label :uf %>
+      <%= delivery_address.text_field :uf %>
+    <% end %>
+  </div>
+  <div style="margin: 10px 10px; border: 1px solid; width: max-content; padding: 10px">
+    <h3> Endereço residencial  </h3>
+    <%= form.fields_for :home_address do |home_address| %>
+      <%= home_address.label :street %>
+      <%= home_address.text_field :street %>
+
+      <%= home_address.label :neighborhood %>
+      <%= home_address.text_field :neighborhood %>
+
+      <%= home_address.label :number %>
+      <%= home_address.text_field :number%>
+
+      <%= home_address.label :complement %>
+      <%= home_address.text_field :complement %>
+
+      <%= home_address.label :postal_code %>
+      <%= home_address.text_field :postal_code %>
+
+      <%= home_address.label :city %>
+      <%= home_address.text_field :city %>
+
+      <%= home_address.label :uf %>
+      <%= home_address.text_field :uf %>
+    <% end %>
+  </div>
+  
+
   <div class="actions">
-    <%= form.submit %>
+
+    <%= form.submit "Salva cliente"%>
   </div>
 <% end %>
