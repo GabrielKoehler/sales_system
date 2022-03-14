@@ -1,0 +1,92 @@
+<h3><%= "##{@customer.id} #{@customer.name}" %></h3>
+<div style="border: 1px solid; width: max-content; padding: 10px">
+  
+  <p>
+    <strong><%= @customer.class.human_attribute_name("name") %>:</strong>
+    <%= @customer.name %>
+  </p>
+  <p>
+    <strong><%= @customer.class.human_attribute_name("cpf") %>:</strong>
+    <%= @customer.cpf %>
+  </p>
+  <p>
+    <strong><%= @customer.class.human_attribute_name("email") %>:</strong>
+    <%= @customer.email %>
+  </p>
+  <p>
+    <strong><%= @customer.class.human_attribute_name("age") %>:</strong>
+    <%= @customer.age %> ano(s)
+  </p>
+
+</div>
+  <h3>Endereços:</h3>
+  <div style="margin: 10px 10px; border: 1px solid; width: 200px; padding: 10px">
+    <h3> Endereço de entrega  </h3>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("street") %>:</strong>
+      <%= @customer.delivery_address.street %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("neighborhood") %>:</strong>
+      <%= @customer.delivery_address.neighborhood %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("number") %>:</strong>
+      <%= @customer.delivery_address.number %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("complement") %>:</strong>
+      <%= @customer.delivery_address.complement %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("postal_code") %>:</strong>
+      <%= @customer.delivery_address.postal_code %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("city") %>:</strong>
+      <%= @customer.delivery_address.city %>
+    </p>
+    <p>
+      <strong> <%= @customer.delivery_address.class.human_attribute_name("uf") %>:</strong>
+      <%= @customer.delivery_address.uf %>
+    </p>
+
+
+  </div>
+
+  <div style="margin: 10px 10px; border: 1px solid; width: 200px; padding: 10px">
+    <h3> Endereço residencial </h3>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("street") %>:</strong>
+      <%= @customer.home_address.street %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("neighborhood") %>:</strong>
+      <%= @customer.home_address.neighborhood %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("number") %>:</strong>
+      <%= @customer.home_address.number %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("complement") %>:</strong>
+      <%= @customer.home_address.complement %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("postal_code") %>:</strong>
+      <%= @customer.home_address.postal_code %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("city") %>:</strong>
+      <%= @customer.home_address.city %>
+    </p>
+    <p>
+      <strong> <%= @customer.home_address.class.human_attribute_name("uf") %>:</strong>
+      <%= @customer.home_address.uf %>
+    </p>
+
+
+  </div>
+
+<%= link_to 'Editar', edit_customer_path(@customer) %> |
+<%= link_to 'Voltar', customers_path %>
